@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocWise | AI-Powered Document Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-gray-300 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0 flex items-center">
+                        <span class="text-xl font-bold gradient-text">DocWise</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-300 hover:text-blue-400 transition duration-300">Features</a>
+                    <a href="#how-it-works" class="text-gray-300 hover:text-blue-400 transition duration-300">How It
+                        Works</a>
+                    <a href="#contact"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300">Get
+                        Started</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-300 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center py-20 px-6 bg-gradient">
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926')] bg-cover bg-center opacity-10">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/50 via-purple-900/50 to-gray-900/50"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left fade-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
+                    <span class="gradient-text">DocWise</span> Your Intelligent Document Assistant
+                </h1>
+                <p class="mt-4 text-lg text-gray-300 mb-8">
+                    Seamlessly manage and query your bills, reports, licenses, and more with our AI-powered chat
+                    interface.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#features"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 ease-in-out">
+                        Get Started
+                    </a>
+                    <a href="#how-it-works"
+                        class="bg-transparent hover:bg-gray-800 text-white border border-gray-600 font-medium py-3 px-6 rounded-lg transition duration-300 ease-in-out">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 floating">
+                <div class="glass p-4 rounded-xl shadow-2xl">
+                    <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                        <div class="flex items-center mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-gray-700 p-3 rounded-lg">
+                                <p class="text-gray-300">When is my Chase credit card bill due?</p>
+                            </div>
+                            <div class="bg-blue-900/50 p-3 rounded-lg">
+                                <p class="text-blue-200">Your Chase credit card bill is due on March 15, 2025. The
+                                    minimum payment is $45.00.</p>
+                            </div>
+                            <div class="bg-gray-700 p-3 rounded-lg">
+                                <p class="text-gray-300">What was my blood iron level from my last test?</p>
+                            </div>
+                            <div class="bg-blue-900/50 p-3 rounded-lg">
+                                <p class="text-blue-200">According to your last lab report from February 12, 2025, your
+                                    blood iron level was 95 μg/dL, which is within the normal range.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 bg-gray-800">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-2 reveal">Powerful Features</h2>
+            <p class="text-xl text-gray-400 mb-12 reveal">Everything you need to manage your documents efficiently</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 glass rounded-lg hover:scale-[1.02] transition-transform duration-300 reveal">
+                    <div class="bg-blue-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Smart Search</h3>
+                    <p class="text-gray-400">Instantly find any document with natural language queries, powered by our
+                        advanced RAG system.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 glass rounded-lg hover:scale-[1.02] transition-transform duration-300 reveal">
+                    <div class="bg-purple-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">AI Insights</h3>
+                    <p class="text-gray-400">Extract meaningful information from your documents with our
+                        state-of-the-art LLM technology.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 glass rounded-lg hover:scale-[1.02] transition-transform duration-300 reveal">
+                    <div class="bg-green-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lock text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Secure Storage</h3>
+                    <p class="text-gray-400">Your documents are encrypted and stored securely with enterprise-grade
+                        security protocols.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-6 bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-2 text-center reveal">How DocWise Works</h2>
+            <p class="text-xl text-gray-400 mb-12 text-center reveal">Simple, intuitive, and powerful</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <div class="glass p-4 rounded-xl shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643" alt="DocWise Interface"
+                            class="rounded-lg w-full">
+                    </div>
+                </div>
+                <div class="space-y-8 reveal">
+                    <div class="flex items-start">
+                        <div
+                            class="bg-blue-600/20 w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-400 font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Upload Your Documents</h3>
+                            <p class="text-gray-400">Simply drag and drop your bills, reports, licenses, and other
+                                important documents.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div
+                            class="bg-blue-600/20 w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-400 font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">AI Processing</h3>
+                            <p class="text-gray-400">Our AI engine analyzes and indexes your documents for quick
+                                retrieval and insights.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div
+                            class="bg-blue-600/20 w-10 h-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <span class="text-blue-400 font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">Ask Questions</h3>
+                            <p class="text-gray-400">Use natural language to query your documents through our chat
+                                interface.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-2 text-center reveal">Get Started Today</h2>
+            <p class="text-xl text-gray-400 mb-12 text-center reveal">Have questions? We're here to help</p>
+            <div class="glass p-8 rounded-lg reveal">
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name"
+                                class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                        <textarea id="message" rows="4"
+                            class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 ease-in-out">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-6 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">DocWise</h3>
+                    <p class="mb-4">Your intelligent document assistant powered by AI.</p>
+                    <div class="flex space-x-4"> <a href="https://www.linkedin.com/company/doc-wise"
+                            class="text-gray-400 hover:text-white transition duration-300"> <i
+                                class="fab fa-linkedin"></i> </a> <a href="https://github.com/doc-wise"
+                            class="text-gray-400 hover:text-white transition duration-300"> <i
+                                class="fab fa-github"></i> </a> </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="hover:text-white transition duration-300">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-300">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Privacy</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2025 DocWise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer> <!-- JavaScript for animations -->
+    <script> document.addEventListener('DOMContentLoaded', function () { const revealElements = document.querySelectorAll('.reveal'); function checkReveal() { revealElements.forEach(element => { const elementTop = element.getBoundingClientRect().top; const windowHeight = window.innerHeight; if (elementTop < windowHeight - 100) { element.classList.add('active'); } }); } window.addEventListener('scroll', checkReveal); window.addEventListener('resize', checkReveal); checkReveal(); }); </script>
+</body>
+</html>
